@@ -1,4 +1,4 @@
-const { userReg } = require("./user");
+const { userReg,userLog } = require("./user");
 const { getTransactions, addTransaction } = require("./transaction");
 const {
   addCategory,
@@ -17,6 +17,7 @@ const {
 
 module.exports = {
   userReg,
+  userLog,
   addProduct,
   getProduct,
   getProducts,

@@ -6,6 +6,7 @@ const router = express.Router();
 // Controller
 const {
   userReg,
+  userLog,
   getProduct,
   addProduct,
   getProducts,
@@ -22,6 +23,7 @@ const {
 
 // Route reg
 router.post("/register", userReg);
+router.post("/login", userLog);
 // Route product
 router.post("/product", addProduct);
 router.get("/products", getProducts);
