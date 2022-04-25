@@ -1,6 +1,13 @@
 const { userReg } = require("./user");
 const { getTransactions, addTransaction } = require("./transaction");
 const {
+  addCategory,
+  getCategories,
+  getCategory,
+  updateCategory,
+  deleteCategory
+} = require("./category");
+const {
   getProducts,
   addProduct,
   getProduct,
@@ -17,4 +24,9 @@ module.exports = {
   deleteProduct,
   addTransaction,
   getTransactions,
+  addCategory,
+  getCategories,
+  getCategory,
+  updateCategory,
+  deleteCategory
 };

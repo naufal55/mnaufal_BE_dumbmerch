@@ -1,23 +1,43 @@
 const express = require("express");
 
-
 //instantiate express module here
-const router = express.Router()
+const router = express.Router();
 
-// Controller 
-const { userReg,getProduct,addProduct,getProducts,updateProduct,deleteProduct,addTransaction,getTransactions } = require('../controllers')
+// Controller
+const {
+  userReg,
+  getProduct,
+  addProduct,
+  getProducts,
+  updateProduct,
+  deleteProduct,
+  addTransaction,
+  getTransactions,
+  addCategory,
+  getCategories,
+  getCategory,
+  updateCategory,
+  deleteCategory
+} = require("../controllers");
 
 // Route reg
 router.post("/register", userReg);
 // Route product
 router.post("/product", addProduct);
-router.get("/products",getProducts)
-router.get("/product/:id",getProduct)
-router.patch("/product/:id",updateProduct)
-router.delete("/product/:id",deleteProduct)
+router.get("/products", getProducts);
+router.get("/product/:id", getProduct);
+router.patch("/product/:id", updateProduct);
+router.delete("/product/:id", deleteProduct);
 // Route transaction
 router.post("/transaction", addTransaction);
-router.get("/transactions",getTransactions)
+router.get("/transactions", getTransactions);
+// Route category
+router.post("/category", addCategory);
+router.get("/categories", getCategories);
+router.get("/category/:id", getCategory);
+router.patch("/category/:id", updateCategory);
+router.delete("/category/:id", deleteCategory);
+
 // router.get('/users', getUsers)
 // router.get('/user/:id', getUser)
 // router.patch('/user/:id', updateUser)
@@ -30,4 +50,4 @@ router.get("/transactions",getTransactions)
 // router.patch("/todo/:id", updateTodo);
 // router.delete("/todo/:id", deleteTodo);
 
-module.exports = router
+module.exports = router;

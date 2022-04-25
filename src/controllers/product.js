@@ -33,11 +33,12 @@ exports.addProduct = async (req, res) => {
   try {
 
       const data = await product.create(req.body)
-
+      const {id, image,title,desc,price,qty} = data;
       res.send({
           status: 'success',
-          message: 'Add product success',
-          data
+          data:{
+            product:{id, image,title,desc,price,qty},
+        }
       })
   } catch (error) {
       console.log(error)
@@ -90,11 +91,27 @@ exports.updateProduct = async (req, res) => {
                 id
             }
         })
+        const data = await product.findAll({ // select ... where ...
+            where: {
+                id
+            },
+            // include:{
+            //     model: user,
+            //     as: "user",
+            //     attributes:{
+            //       exclude: ['password','createdAt','updatedAt']
+            //     }
+            //   },
+            attributes: {
+                exclude: ['password', 'createdAt', 'updatedAt','idUser'] // pengecualian 3 item tdk dtampilkan
+            }
+        })
 
         res.send({
             status: 'success',
-            message: `Update user id: ${id} finished`,
-            data : req.body
+            data: {
+                product: data
+            }
         })
     } catch (error) {
         console.log(error)
@@ -115,9 +132,8 @@ exports.deleteProduct = async (req, res) => {
 
         res.send({
             status: 'success',
-            message: `Delete user id: ${id} success`,
             data : {
-                id : data
+                id : id
             }
         })
         

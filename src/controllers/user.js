@@ -3,7 +3,7 @@ const {user} = require('../../models')
 exports.userReg = async(req,res) => {
 
     try {
-        const data = await user.create(req.body)//create = insert into
+        await user.create(req.body)//create = insert into
         res.status(201).send({
             status: 'success',
             data:{
