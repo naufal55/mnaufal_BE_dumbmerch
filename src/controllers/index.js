@@ -1,3 +1,5 @@
+const { userReg } = require("./user");
+const { getTransactions, addTransaction } = require("./transaction");
 const {
   getProducts,
   addProduct,
@@ -5,13 +7,14 @@ const {
   updateProduct,
   deleteProduct,
 } = require("./product");
-const { userReg } = require("./user");
 
 module.exports = {
-  getProduct,
-  getProducts,
   userReg,
   addProduct,
+  getProduct,
+  getProducts,
   updateProduct,
   deleteProduct,
+  addTransaction,
+  getTransactions,
 };

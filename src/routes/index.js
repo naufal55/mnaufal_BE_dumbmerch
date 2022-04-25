@@ -5,16 +5,19 @@ const express = require("express");
 const router = express.Router()
 
 // Controller 
-const { userReg,getProduct,addProduct,getProducts,updateProduct,deleteProduct } = require('../controllers')
+const { userReg,getProduct,addProduct,getProducts,updateProduct,deleteProduct,addTransaction,getTransactions } = require('../controllers')
 
-// Route db
+// Route reg
 router.post("/register", userReg);
+// Route product
 router.post("/product", addProduct);
 router.get("/products",getProducts)
 router.get("/product/:id",getProduct)
 router.patch("/product/:id",updateProduct)
 router.delete("/product/:id",deleteProduct)
-
+// Route transaction
+router.post("/transaction", addTransaction);
+router.get("/transactions",getTransactions)
 // router.get('/users', getUsers)
 // router.get('/user/:id', getUser)
 // router.patch('/user/:id', updateUser)
