@@ -1,4 +1,5 @@
-const { userReg,userLog } = require("./user");
+// const { userReg,userLog } = require("./user");
+const { userReg,userLog } = require("./auth");
 const { getTransactions, addTransaction } = require("./transaction");
 const {
   addCategory,

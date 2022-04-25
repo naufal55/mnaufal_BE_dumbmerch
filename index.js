@@ -1,6 +1,8 @@
 //use express in app variable here
 const express = require("express")
 const app = express()
+//declare env
+require('dotenv').config()
 
 //Get routes to the variabel here
 const router =  require("./src/routes")

@@ -21,24 +21,27 @@ const {
   deleteCategory
 } = require("../controllers");
 
+//middleware auth
+const {auth} = require('../middlewares/auth')
+
 // Route reg
 router.post("/register", userReg);
 router.post("/login", userLog);
 // Route product
-router.post("/product", addProduct);
-router.get("/products", getProducts);
-router.get("/product/:id", getProduct);
-router.patch("/product/:id", updateProduct);
-router.delete("/product/:id", deleteProduct);
+router.post("/product",auth, addProduct);
+router.get("/products",auth, getProducts);
+router.get("/product/:id",auth, getProduct);
+router.patch("/product/:id",auth, updateProduct);
+router.delete("/product/:id",auth, deleteProduct);
 // Route transaction
-router.post("/transaction", addTransaction);
-router.get("/transactions", getTransactions);
+router.post("/transaction",auth, addTransaction);
+router.get("/transactions", auth, getTransactions);
 // Route category
-router.post("/category", addCategory);
-router.get("/categories", getCategories);
-router.get("/category/:id", getCategory);
-router.patch("/category/:id", updateCategory);
-router.delete("/category/:id", deleteCategory);
+router.post("/category",auth, addCategory);
+router.get("/categories",auth, getCategories);
+router.get("/category/:id",auth, getCategory);
+router.patch("/category/:id",auth, updateCategory);
+router.delete("/category/:id",auth, deleteCategory);
 
 // router.get('/users', getUsers)
 // router.get('/user/:id', getUser)
