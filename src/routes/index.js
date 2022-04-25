@@ -5,15 +5,20 @@ const express = require("express");
 const router = express.Router()
 
 // Controller 
-const { userReg, getUsers, getUser, updateUser, deleteUser } = require('../controllers/user')
+const { userReg,getProduct,addProduct,getProducts,updateProduct,deleteProduct } = require('../controllers')
 
-  
 // Route db
 router.post("/register", userReg);
-router.get('/users', getUsers)
-router.get('/user/:id', getUser)
-router.patch('/user/:id', updateUser)
-router.delete('/user/:id', deleteUser)
+router.post("/product", addProduct);
+router.get("/products",getProducts)
+router.get("/product/:id",getProduct)
+router.patch("/product/:id",updateProduct)
+router.delete("/product/:id",deleteProduct)
+
+// router.get('/users', getUsers)
+// router.get('/user/:id', getUser)
+// router.patch('/user/:id', updateUser)
+// router.delete('/user/:id', deleteUser)
 
 //route todo
 // router.get("/todos", getTodos);
