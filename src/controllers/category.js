@@ -123,7 +123,7 @@ exports.deleteCategory = async (req, res) => {
         
     } catch (error) {
         console.log(error)
-        res.status(201).send({
+        res.status(401).send({
             status: 'failed',
             message: 'Server Error'
         })

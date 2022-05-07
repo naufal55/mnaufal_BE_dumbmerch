@@ -31,6 +31,13 @@ module.exports = (sequelize, DataTypes) => {
           name: "idSeller"
         }
       });
+
+      transaction.hasOne(models.rating,{
+        as:"rating",
+        foreignKey:{
+          name: "idTransaction"
+        }
+      })
     }
   }
   transaction.init({

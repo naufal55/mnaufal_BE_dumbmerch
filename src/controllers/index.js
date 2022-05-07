@@ -15,8 +15,11 @@ const {
   updateProduct,
   deleteProduct,
 } = require("./product");
-
+const { getProfile,updateProfile } = require("./profile");
+const { getRating, updateRating } = require("./rating");
 module.exports = {
+  updateProfile,
+  getProfile,
   userReg,
   userLog,
   addProduct,
@@ -30,5 +33,7 @@ module.exports = {
   getCategories,
   getCategory,
   updateCategory,
-  deleteCategory
+  deleteCategory,
+  getRating,
+  updateRating,
 };
